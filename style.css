@@ -47,13 +47,13 @@ h1{
 
 .tagline{
   margin:18px 0 0;
-  font-size:12pt;
+  font-size:24pt;
   line-height:1.2;
 }
 
 .archive-label{
   margin:10px 0 0;
-  font-size:24pt;
+  font-size:12pt;
   line-height:1.2;
 }
 
@@ -165,7 +165,7 @@ main{
   }
 
   .site-footer p{
-    font-size:clamp(18px,5.5vw,24px);
+    font-size:12pt;
   }
 }
 
