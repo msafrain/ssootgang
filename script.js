@@ -45,7 +45,7 @@
     let startIndex = 1;
 
     while (true) {
-      status.textContent = `Loading archive… ${allEntries.length} posts found`;
+      status.hidden = true;
 
       const feedUrl = `https://${BLOG_HOST}/feeds/posts/default/-/${encodeURIComponent(LABEL)}` +
         `?alt=json-in-script&orderby=published&max-results=${BATCH_SIZE}&start-index=${startIndex}`;
@@ -94,7 +94,7 @@
     const article = document.createElement('article');
     article.className = 'post';
 
-    const title = entry.title?.$t?.trim() || 'Untitled';
+    const imageAlt = 'Boot archive image';
     const url = getPostUrl(entry);
     const html = getHtml(entry);
     const images = getImages(html);
@@ -107,7 +107,7 @@
       images.forEach((src, imageIndex) => {
         const img = document.createElement('img');
         img.src = src;
-        img.alt = imageIndex === 0 ? title : `${title} — image ${imageIndex + 1}`;
+        img.alt = imageIndex === 0 ? imageAlt : `${imageAlt} ${imageIndex + 1}`;
         img.loading = index < 2 ? 'eager' : 'lazy';
         img.decoding = 'async';
         media.appendChild(img);
@@ -115,16 +115,6 @@
 
       article.appendChild(media);
     }
-
-    const heading = document.createElement('h2');
-    heading.className = 'post-title';
-    const link = document.createElement('a');
-    link.href = url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = title;
-    heading.appendChild(link);
-    article.appendChild(heading);
 
     if (textHtml) {
       const body = document.createElement('div');
@@ -141,13 +131,11 @@
       const posts = await fetchAllPosts();
       archive.replaceChildren(...posts.map(renderPost));
       archive.setAttribute('aria-busy', 'false');
-
-      status.textContent = posts.length
-        ? `${posts.length} archive post${posts.length === 1 ? '' : 's'}.`
-        : 'No posts labelled “boots” were found.';
+      status.hidden = true;
     } catch (error) {
       console.error(error);
       archive.setAttribute('aria-busy', 'false');
+      status.hidden = false;
       status.innerHTML = 'The Blogger archive could not be loaded. Confirm that the blog is public and that posts use the label <strong>boots</strong>.';
     }
   }
