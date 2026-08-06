@@ -53,7 +53,7 @@ h1{
 
 .archive-label{
   margin:10px 0 0;
-  font-size:12pt;
+  font-size:24pt;
   line-height:1.2;
 }
 
@@ -130,7 +130,7 @@ main{
 .site-footer p{
   margin:0;
   font-family:Tahoma, Geneva, Verdana, sans-serif;
-  font-size:12pt;
+  font-size:24pt;
   font-weight:400;
   line-height:1.12;
   text-align:center;
@@ -143,10 +143,12 @@ main{
     padding-bottom:54px;
   }
 
-  h1{font-size:clamp(44px,14vw,64px)}
+  h1{
+    font-size:69pt;
+  }
 
   .tagline{
-    font-size:18px;
+    font-size:24pt;
   }
 
   .archive-label{
