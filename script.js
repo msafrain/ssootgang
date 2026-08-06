@@ -141,10 +141,7 @@
       const posts = await fetchAllPosts();
       archive.replaceChildren(...posts.map(renderPost));
       archive.setAttribute('aria-busy', 'false');
-
-      status.textContent = posts.length
-        ? `${posts.length} archive post${posts.length === 1 ? '' : 's'}.`
-        : 'No posts labelled “boots” were found.';
+      status.remove();
     } catch (error) {
       console.error(error);
       archive.setAttribute('aria-busy', 'false');
