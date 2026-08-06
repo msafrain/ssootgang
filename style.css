@@ -53,7 +53,7 @@ h1{
 
 .archive-label{
   margin:10px 0 0;
-  font-size:24pt;
+  font-size:12pt;
   line-height:1.2;
 }
 
@@ -130,7 +130,7 @@ main{
 .site-footer p{
   margin:0;
   font-family:Tahoma, Geneva, Verdana, sans-serif;
-  font-size:24pt;
+  font-size:12pt;
   font-weight:400;
   line-height:1.12;
   text-align:center;
@@ -145,8 +145,13 @@ main{
 
   h1{font-size:clamp(44px,14vw,64px)}
 
-  .tagline,
-  .archive-label{font-size:clamp(18px,5.5vw,24px)}
+  .tagline{
+    font-size:18px;
+  }
+
+  .archive-label{
+    font-size:12pt;
+  }
 
   .social-links{
     top:16px;
@@ -165,7 +170,7 @@ main{
   }
 
   .site-footer p{
-    font-size:clamp(18px,5.5vw,24px);
+    font-size:12pt;
   }
 }
 
