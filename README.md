@@ -1,10 +1,10 @@
-# Ssootgang
+# Ssootgang update
 
-Replace the existing GitHub repository files with these exact files:
+Changes in this version:
+- Mobile tagline breaks into two lines:
+  - It’s Ssootgang.
+  - No, it’s ßootgang.
+- Desktop tagline remains on one line.
+- Footer changed to: All work by M. S.
 
-- index.html
-- style.css
-- script.js
-- CNAME
-
-After committing, wait for GitHub Pages to redeploy and perform a hard refresh.
+Upload these files to the root of the GitHub repository and replace the existing versions.

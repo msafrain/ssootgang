@@ -168,3 +168,13 @@ main{
     font-size:clamp(18px,5.5vw,24px);
   }
 }
+
+.mobile-only-break{
+  display:none;
+}
+
+@media (max-width:768px){
+  .mobile-only-break{
+    display:block;
+  }
+}
