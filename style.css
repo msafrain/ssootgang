@@ -143,12 +143,10 @@ main{
     padding-bottom:54px;
   }
 
-  h1{
-    font-size:69pt;
-  }
+  h1{font-size:48pt}
 
   .tagline{
-    font-size:24pt;
+    font-size:18pt;
   }
 
   .archive-label{
